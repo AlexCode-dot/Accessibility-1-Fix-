@@ -12,17 +12,17 @@
     <header>
         <h1>A11y News</h1>
         <nav class="nav">
-            <a class="nav__item active" href="#news">Home</a>
-            <a class="nav__item" href="#news">News</a>
-            <a class="nav__item" href="#about">About us</a>
-            <a class="nav__item" href="#contact">Contact</a>
+            <a class="nav__item active" href="#home" aria-label="Go to homepage">Home</a>
+            <a class="nav__item" href="#news" aria-label="View latest news">News</a>
+            <a class="nav__item" href="#about" aria-label="Learn more about us">About us</a>
+            <a class="nav__item" href="#contact" aria-label="Contact us">Contact</a>
         </nav>
     </header>
     <main>
         <section class="search-container">
             <label for="search">Search:</label>
             <input type="text" id="search" name="search" placeholder="Search for keyword, title etc...">
-            <button type="button">Search</button>
+            <button type="button" aria-label="Search the site with keywords. titles, news etc.">Search</button>
         </section>
         <section class="breaking-news">
             <h2 class="headline">Breaking News</h2>
@@ -37,20 +37,27 @@
         <section class="featured-news">
             <h2>More news</h2>
             <div class="featured-news__list">
-            <article>
-                <img src="images/ocean.png" alt="The ocean" width="150px" height="150px">
-                <h3>News Title</h3>
-            </article>
-            <article>
-                <img src="images/city.png" alt="The city" width="150px" height="150px">
-                <h3>News Title</h3>
-            </article>
-            <article>
-                <img src="images/family.png" alt="A family" width="150px" height="150px">
-                <h3>News Title</h3>
-            </article>
-        </div>
+                <article>
+                    <a href="/news-ocean" class="featured-news__link" aria-label="Read more about the ocean news">
+                        <img src="images/ocean.png" alt="A picture of the ocean and there is waves." width="150px" height="150px">
+                        <h3>Ocean news</h3>
+                    </a>
+                </article>
+                <article>
+                    <a href="/news-city" class="featured-news__link" aria-label="Read more about the city news">
+                        <img src="images/city.png" alt="A picture of a city, there is trafic going down a street." width="150px" height="150px">
+                        <h3>City news</h3>
+                    </a>
+                </article>
+                <article>
+                    <a href="/news-family" class="featured-news__link" aria-label="Read more about family news">
+                        <img src="images/family.png" alt="A family photo, the family looks happy." width="150px" height="150px">
+                        <h3>Family news</h3>
+                    </a>
+                </article>
+            </div>
         </section>
+        
     </main>
     <footer class="footer">
 

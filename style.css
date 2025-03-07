@@ -43,6 +43,8 @@ h2 {
 
 /* Navigeringsmeny med mörk bakgrund och jämnt fördelade element */
 .nav {
+  margin-left: 100px;
+  margin-right: 100px;
   background-color: #2e2d2d;
   padding: 30px;
   display: flex;
@@ -145,6 +147,7 @@ h2 {
 .featured-news__list article:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  opacity: 0.9;
 }
 
 .featured-news__list img {
@@ -157,4 +160,9 @@ h2 {
 .featured-news__list h3 {
   margin-top: 10px;
   font-size: 1.8rem;
+}
+
+.featured-news__link {
+  text-decoration: none;
+  color: #ffffff;
 }
