@@ -1,20 +1,16 @@
-/* Återställer standardmarginaler/padding och använder border-box för att inkludera padding i elementets storlek */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  /* Tungläst typsnitt */
 }
 
-/* Ställer in bakgrundsfärg, textfärg och textstil för hela sidan */
 body {
   background: #4b4949;
   color: #f5f5dc;
   font-size: 30px;
   text-align: left;
   letter-spacing: 5px;
-  word-spacing: 15px;
   text-shadow: 5px 5px 10px black;
 }
 
@@ -24,27 +20,15 @@ header {
 }
 
 h1 {
+  font-size: clamp(2rem, 11vw, 9rem);
   text-align: center;
   margin-top: 40px;
   margin-bottom: 40px;
-  font-size: 80px;
 }
 
-/* Rubrik med stor text och mörkröd färg, justerad till höger */
-h2 {
-  font-size: 80px;
-  font-weight: lighter;
-  color: white;
-  text-align: center;
-  margin: 50px;
-  padding: 20px;
-  margin-top: 100px;
-}
-
-/* Navigeringsmeny med mörk bakgrund och jämnt fördelade element */
 .nav {
-  margin-left: 100px;
-  margin-right: 100px;
+  margin-left: auto;
+  margin-right: auto;
   background-color: #2e2d2d;
   padding: 30px;
   display: flex;
@@ -53,14 +37,57 @@ h2 {
   font-weight: bold;
 }
 
-/* Navigeringslänkar */
 .nav__item {
   color: #ffffff;
   padding: 10px;
   text-decoration: none;
 }
 
-/* Bakgrundsfärg vid hover på navigationslänkar */
+.nav-toggle {
+  display: none;
+  font-size: 90px;
+  background: none;
+  border: none;
+  color: #f5f5dc;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 20px;
+}
+
+@media (max-width: 700px) {
+  .nav {
+    flex-direction: column;
+    align-items: center;
+    display: none; 
+  }
+
+  .nav__item {
+    display: block;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+}
+
+h2 {
+  font-size: clamp(2rem, 8vw, 6rem);
+  font-weight: lighter;
+  color: white;
+  text-align: center;
+  margin: 50px;
+  padding: 20px;
+  margin-top: 100px;
+}
+
+
 .nav__item:hover {
   background-color: red;
 }
@@ -100,6 +127,13 @@ h2 {
   max-width: 640px;
 }
 
+.main-article img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
 .main-article h3 {
   color: #f5f5dc;
   font-size: 30px;
@@ -129,6 +163,7 @@ h2 {
   align-items: center;
   gap: 30px;
   margin-bottom: 80px;
+  flex-wrap: wrap;
 }
 
 .featured-news__list article {
@@ -139,9 +174,9 @@ h2 {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 180px;
+  width: 30%;
+  min-width: 180px;
   word-spacing: 0px;
-  text-align: center;
 }
 
 .featured-news__list article:hover {
@@ -151,8 +186,8 @@ h2 {
 }
 
 .featured-news__list img {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  height: auto;
   object-fit: cover;
   border-radius: 8px;
 }
